@@ -107,7 +107,6 @@ def parse_input() -> list[CardEntry]:
     for line in fileinput.input():
         line = line.strip()
         if entry := CardEntry.parse(line):
-            print(entry)
             print(".", end="", flush=True)
             entries.append(entry)
         elif line == "":
