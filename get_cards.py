@@ -94,10 +94,16 @@ class Card:
 
     def download_faces(self, output_dir: str):
         directory = Path(output_dir)
-        download_file(Url(self.image_uri_front), directory / (self.name_front + ".png"))
+        download_file(
+            Url(self.image_uri_front),
+            directory
+            / (self.name_front + self.setcode + self.collector_number + ".png"),
+        )
         if self.image_uri_back and self.name_back:
             download_file(
-                Url(self.image_uri_back), directory / (self.name_back + ".png")
+                Url(self.image_uri_back),
+                directory
+                / (self.name_back + self.setcode + self.collector_number + ".png"),
             )
 
 
