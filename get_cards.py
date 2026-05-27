@@ -97,13 +97,13 @@ class Card:
         download_file(
             Url(self.image_uri_front),
             directory
-            / (self.name_front + self.setcode + self.collector_number + ".png"),
+            / (self.name_front + self.setcode + self.collector_number + "front" + ".png"),
         )
         if self.image_uri_back and self.name_back:
             download_file(
                 Url(self.image_uri_back),
                 directory
-                / (self.name_back + self.setcode + self.collector_number + ".png"),
+                / (self.name_back + self.setcode + self.collector_number + "back" + ".png"),
             )
 
 
